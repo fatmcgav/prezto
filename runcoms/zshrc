@@ -11,3 +11,10 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+# Additional aliases
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/aliases.zsh"  ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/aliases.zsh"
+fi
+
+PERL_MB_OPT="--install_base \"/Users/gavinw/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/gavinw/perl5"; export PERL_MM_OPT;

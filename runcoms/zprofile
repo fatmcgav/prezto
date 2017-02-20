@@ -17,17 +17,27 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='vim'
+export VISUAL='vim'
 export PAGER='less'
+
+#
+## Autoenv
+#
+source /usr/local/opt/autoenv/activate.sh
 
 #
 # Language
 #
 
 if [[ -z "$LANG" ]]; then
-  export LANG='en_US.UTF-8'
+  export LANG='en_GB.UTF-8'
 fi
+
+#
+## Default ulimit
+#
+ulimit -n 2048
 
 #
 # Paths
@@ -72,3 +82,15 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
+
+#
+## Setup GO Dev
+#
+
+export GOPATH=$HOME/golang
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+# Homebrew Github
+export HOMEBREW_GITHUB_API_TOKEN=8cc8f58ec05aa7963c63d374c7c0cf08286fc3ff
